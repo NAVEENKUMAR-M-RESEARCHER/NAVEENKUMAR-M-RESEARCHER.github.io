@@ -59,7 +59,7 @@
 <div class="head" style="background-color:#33ADAD;width:100%;height:25%;">
 
 <center>
-     <h1><i>HTML:Teaching/Learning tool, SRM University</i></h1>
+     <h1><i>HTML:Teaching/Learning tool, SRM-AP University</i></h1>
 	 <table border=0 class="t" width="35%" height="15%">   
    <tr> 
         <td align="center"><button  id="b2" onclick="bas()"><h3>HTML Basics</h3></button></td>
