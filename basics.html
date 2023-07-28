@@ -1,0 +1,100 @@
+<html>
+<head>
+  <style>
+    h3
+	 {
+       font-family: Comic Sans MS;
+	    font-size:18px;
+     }
+  </style>
+ <script>
+    function p()
+	{
+        document.getElementById("demo").innerHTML = " <p>This is a Paragraph</p> "
+		document.getElementById("c").innerHTML = " <code>&lt;p&gt; This is a Paragraph &lt;/p&gt;</code>"
+	}
+	function h()
+	{
+	    document.getElementById("demo").innerHTML = " <h1>This is my 1st Heading</h1> <br><h2>This is my 2nd heading</h2>"
+		document.getElementById("c").innerHTML = " <code>&lt;h1&gt; This is my 1st Heading &lt;/h1&gt;<br>&lt;br&gt;&lt;h2&gt;This is my 2nd heading&lt;/h2&gt;</code>" 
+	}
+	function br()
+	{
+        document.getElementById("demo").innerHTML = " Here is a statement.<br>This tag indicates the break line. "
+		document.getElementById("c").innerHTML = " <code>Here is a statement.&lt;br&gt;<br> This  tag indicates the break line</code>"
+	}
+	function img()
+	{
+	   document.getElementById("demo").innerHTML =  " <img src='img.jpg' width=450px height=160px></img> "
+	   document.getElementById("c").innerHTML = " <code>&lt;img src = 'img.jpg' width=450px height=160px&gt;&lt;/img&gt; </code> "
+	}
+	function l()
+	{
+	   document.getElementById("demo").innerHTML =  " Here is a link to another page.<a href='link.html'>click me</a> "
+	   document.getElementById("c").innerHTML = " <code>Here is a link to another page.&lt;a href = 'link.html'&gt;click me&lt;/a&gt; </code> "
+	}
+	function format()
+	{
+	   document.getElementById("demo").innerHTML =  " <p><b>This text is bold</b></p><br><p><strong>This text is strong</strong></p><br><p><i>This text is italic</i></p> "
+	   document.getElementById("c").innerHTML = " <code>&lt;b&gt;This text is bold&lt;/b&gt;<br>&lt;strong&gt;This text is strong&lt;/strong&gt;<br>&lt;i&gt;This text is italic&lt;/i&gt; </code> "
+	}
+	function ol()
+	{
+	   document.getElementById("demo").innerHTML =  " <h4>An Ordered List:</h4><ol><li>Coffee</li><li>Tea</li><li>Milk</li></ol>"
+	   document.getElementById("c").innerHTML = " <code>ordered list:<br>&nbsp;&lt;ol&gt;&lt;li&gt;coffee&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Tea&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Milk&lt;/li&gt;<br>&nbsp;&lt;ol&gt; </code> "
+	}
+	function ul()
+	{
+	   document.getElementById("demo").innerHTML =  " <h4>An Unordered List:</h4><ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>"
+	   document.getElementById("c").innerHTML = " <code>Unordered list:<br>&nbsp;&lt;ul&gt;&lt;li&gt;coffee&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Tea&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Milk&lt;/li&gt;<br>&nbsp;&lt;ul&gt; </code> "
+	}
+	function mar()
+	{
+	   document.getElementById("demo").innerHTML =  "HTML stands for Hyper Text Markup Language.<br><br><marquee> With HTML you can create your own Web site.</marquee> "
+	   document.getElementById("c").innerHTML = " <code>HTML stands for Hyper Text Markup Language.<br>&lt;marquee&gt;With HTML you can create your own Web site.&lt;marquee&gt; </code> "
+	}
+	function css()
+	{
+	   document.getElementById("demo").innerHTML =  " <p style='font-family:verdana;color:red;'>This text is in Verdana and red</p><br><p style='font-family:times;color:green;'>This text is in Times and green</p> "
+	   document.getElementById("c").innerHTML = " <code>&lt;p style='font-family:verdana;color:red;'>This text is in Verdana and red&lt;/p&gt;<br>&lt;p style='font-family:times;color:green;'>This text is in Times and green&lt;/p&gt; </code> "
+	}
+</script>
+</head>
+<body>
+  <div class="left" style="background-color:#D4D4D4;width:45%;height:85%;float:left;">
+ <h3> HTML Elements:<br><br>
+     &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="p()">&lt;p&gt;&nbsp;tag</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="h()">&lt;h1&gt;&nbsp;tag</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="br()">&lt;br&gt;&nbsp;tag</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="img()">&nbsp;How to insert Image</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="l()">&nbsp;How to link to another page</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="format()">&nbsp;HTML Formats</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="ol()">&nbsp;Ordered List</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="ul()">&nbsp;Unordered List</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="mar()">&nbsp;Marquee</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="n" onclick="css()">&nbsp;HTML CSS</input><br>
+  </h3>	 
+  </div>
+  <div class="right" style="background-color:#E5E5E5;width:45%;height:60%;float:right;">
+  Output:
+    <p id="demo"></p>
+   </div>
+<br><br><br><br>
+  
+  <div id="code" style="background-color:#F2F2F2;width:45%;height:30%;float:right;">
+    Code:
+    <p id="c"></p>
+  </div>
+
+</body>
+</html> 

@@ -1,0 +1,78 @@
+<html>
+<head>
+  <style>
+    h3
+	 {
+       font-family: Comic Sans MS;
+	    font-size:18px;
+     }
+  </style>
+  <script>
+     function aud()
+	 {
+	   document.getElementById("demo").innerHTML = " <center><embed height='50' width='500' src='s.mp3'></embed><br>This is a music file.</center> "
+		document.getElementById("c").innerHTML = " <code>&lt;embed height='50' width='500' src='s.mp3'&gt;&lt;/embed&gt;</code>"
+     }
+     function vid()
+	 {
+	   document.getElementById("demo").innerHTML = "<video width='320' height='200' controls='controls'><source src='sunn.mp4' type='video/mp4'></video> "
+	   document.getElementById("c").innerHTML = " <code>&lt;video width='320' height='200' controls='controls'&gt;<br>&lt;source src='sunn.mp4' type='video/mp4'&gt;&lt;/video&gt;</code>"
+     }
+     function divp()
+	 {
+	   document.getElementById("demo").innerHTML = " <center><div id='a' style='background-color:yellow;width:40%;height:50%;float:left'>HII</div><div id='b' style='background-color:orange;width:40%;height:50%;float:right'>HELLO</div>  </center> "
+	   document.getElementById("c").innerHTML = " <code>&lt;div id='a' style='background-color:yellow;width:40%;height:50%;float:left'&gt;HII&lt;/div&gt;<br>&lt;div id='b' style='background-color:orange;width:40%;height:50%;float:right'&gt;HELLO&lt;/div&gt;</code>"
+     }
+	 function frms()
+	 {
+	    document.getElementById("demo").innerHTML ="<embed src=frame.html width=90% height=90%>"
+		document.getElementById("c").innerHTML = "<code>&lt;frameset rows='20%,80%'&gt;<br>&lt;frame src='topframe.html' name='topframe'&gt;<br>&lt;frameset cols='45%,65%'&gt;<br>&lt;frame src='leftframe.html' name='leftframe'&gt;<br>&lt;frame src='rightframe.html' name='rightframe'&gt;<br>&lt;/frameset&gt;&lt;/frameset&gt;  </code> "
+	 }
+     function imgl()
+	 {
+	   document.getElementById("demo").innerHTML = " <center><a href='link.html'><img src='images.jpg' width=100 height=100></img></a><br>Click this image.It acts a link.</center> "
+	   document.getElementById("c").innerHTML = " <code>&lt;a href='link.html'&gt;&lt;img src='images.jpg' width=100 height=100&gt;&lt;/img&gt;&lt;/a&gt;</code>"
+     }
+	 function cs()
+	 {
+	   document.getElementById("demo").innerHTML ="<h1 style='background-color:orange;width:500;height:180;font-family:Segoe Print;font-size:40px;'>Background colour is orange</h1>"
+	   document.getElementById("c").innerHTML = " <code>&lt;h1 style='background-color:orange;width:500;height:180;font-family:Segoe Print;font-size:40px;'&gt;Backgroun colour is orange &lt;/h1&gt;</code> "
+	  }
+	  function scr()
+	  {
+	    document.getElementById("demo").innerHTML = " <embed src=script.html width=90% height=90%> "
+        document.getElementById("c").innerHTML = "<code>&lt;script&gt;function fun(){document.getElementById('t').innerHTML ='These actions can be performed using Java script.'} <br> &lt;/script&gt;<br> Here is a button.click it.<br>&lt;input type='button' value='click' onclick='fun()'&gt;<br>&lt;p id='t'&gt;&lt;/p&gt; </code> "		
+	  }
+  </script>
+</head>
+<body>
+<div class="left" style="background-color:#D4D4D4;width:45%;height:85%;float:left;">
+ <h3> HTML Elements:<br><br>
+     &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="aud()">&nbsp;Audio file</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="vid()">&nbsp;Video file</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="divp()">&nbsp;How to divide a page using &lt;div&gt; tag</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="frms()">&nbsp;How to divide a page using frameset</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="imgl()">&nbsp;Image as a link</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="cs()">&nbsp;CSS</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="scr()">&nbsp;HTML Scripts</input><br>
+  </h3>	 
+  </div>
+  <div class="right" style="background-color:#E5E5E5;width:45%;height:60%;float:right;">
+  Output:
+    <p id="demo"></p>
+   </div>
+<br><br><br><br>
+   <div id="code" style="background-color:#F2F2F2;width:45%;height:30%;float:right;">
+    Code:
+    <p id="c"></p>
+  </div>
+ 
+</body>
+</html>     
