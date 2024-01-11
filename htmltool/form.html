@@ -1,0 +1,78 @@
+<html>
+<head>
+  <style>
+    h3
+	 {
+       font-family: Comic Sans MS;
+	    font-size:18px;
+     }
+  </style>
+  <script>
+     function txt()
+	 {
+        document.getElementById("demo").innerHTML = " <center>Username&nbsp;:<input type='text' name='t'></input></center> "
+		document.getElementById("c").innerHTML = " <code>username:&lt;input type='text' name='t'&gt;&lt;/input&gt;</code>"
+     }
+	 function pas()
+	 {
+        document.getElementById("demo").innerHTML = " <center>Username&nbsp;:<input type='text' name='t'></input><br>Password&nbsp;:<input type='password'></input></center> "
+		document.getElementById("c").innerHTML = " <code>Password:&lt;input type='password' name='p'&gt;&lt;/input&gt;</code>"
+     }
+	 function but()
+	 {
+        document.getElementById("demo").innerHTML = " <center>Username&nbsp;:<input type='password' name='t'></input><br>Password&nbsp;:<input type='password'></input><br><input type='button' value='click'></input></center> "
+		document.getElementById("c").innerHTML = "<code> &lt;input type='button' value='click'&gt;&lt;/input&gt;</code>"
+     }
+	 function radb()
+	 {
+	    document.getElementById("demo").innerHTML = " <br><center>Gender&nbsp;:<input type='radio' name='gender' value='male'>Male<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='radio' name='gender' value='female'>Female</input> "
+		document.getElementById("c").innerHTML ="<code>Gender: &lt;input type='radio' name='gender'&gt;Male<br>&lt;input type='radio' name='gender'&gt;Female </code>"
+	 }
+	 function chk()
+	 {
+        document.getElementById("demo").innerHTML = "Interests:&nbsp;<input type='checkbox' name='intrests'>C<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox' name='intrests'>C++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox' name='intrests'>java<br>"
+		document.getElementById("c").innerHTML = " <code>Interests:&lt;input type='checkbox' name='interests'&gt;C<br>&lt;input type='checkbox' name='interests'&gt;C++<br>&lt;input type='checkbox' name='interests'&gt;java</code>"
+     }
+	 function sel()
+	 { 
+	    document.getElementById("demo").innerHTML = " BRANCH:<select name='BRANCH'><option value='CSE'>CSE</option><option value='EEE'>EEE</option><option value='ECE'>ECE</option><option value='IT'>IT</option></select>"
+		document.getElementById("c").innerHTML = "<code>&lt;select name='BRANCH'&gt;<br>&lt;option value='CSE'&gt;CSE&lt;/option&gt;<br>&lt;option value='EEE'&gt;EEE&lt;/option&gt;<br>&lt;option value='ECE'&gt;ECE&lt;/option&gt;<br>&lt;option value='IT'&gt;IT&lt;/option&gt;<br>&lt;/select&gt;</code> "
+	 }
+     function sub()
+	 {
+        document.getElementById("demo").innerHTML = " <center><form action='link.html'>Username&nbsp;:<input type='text' name='t'></input><br>Password&nbsp;:<input type='password'></input><br><input type='submit' value='submit'></input></form></center> "
+		document.getElementById("c").innerHTML = "<code>&lt;form action='link.html'&gt;<br>username:&lt;input type='text' name='t'&gt;&lt;/input&gt;<br>Password:&lt;input type='password' name='p'&gt;&lt;/input&gt;<br>&lt;input type='submit' value='submit'&gt;&lt;/input&gt;<br>&lt;/form&gt;</code>"
+     }	 
+  </script>
+ </head>
+<body>
+<div class="left" style="background-color:#D4D4D4;width:45%;height:85%;float:left;">
+ <h3> HTML Elements:<br><br>
+     &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="txt()">&nbsp;How to create Textfield</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="pas()">&nbsp;How to create Password field</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="but()">&nbsp;Creating Buttons</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="radb()">&nbsp;Radio Buttons</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="chk()">&nbsp;Check box</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="sel()">&nbsp;select Box</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="sub()">&nbsp;Submit button</input><br>
+  </h3>	 
+  </div>
+  <div class="right" style="background-color:#E5E5E5;width:45%;height:60%;float:right;">
+  Output:
+    <p id="demo"></p>
+   </div>
+<br><br><br><br>
+   <div id="code" style="background-color:#F2F2F2;width:45%;height:30%;float:right;">
+    Code:
+    <p id="c"></p>
+  </div>
+ 
+</body>
+</html>   

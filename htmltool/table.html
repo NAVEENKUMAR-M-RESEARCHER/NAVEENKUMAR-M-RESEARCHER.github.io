@@ -1,0 +1,88 @@
+<html>
+<head>
+  <style>
+    h3
+	 {
+       font-family: Comic Sans MS;
+	    font-size:18px;
+     }
+  </style>
+  <script>
+     function table()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1><tr><td>Harry</td><td>Ron</td></tr><tr><td>Edward</td><td>Jacob</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Edward&lt;/td&gt;&lt;td&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	 function att()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td>Harry</td><td>Ron</td></tr><tr><td>Edward</td><td>Jacob</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Edward&lt;/td&gt;&lt;td&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	 function aln()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td align='right'>Harry</td><td>Ron</td></tr><tr><td align='center'>Edward</td><td>Jacob</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td align='right'&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td align='center'&gt;Edward&lt;/td&gt;&lt;td&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	 function valn()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td align='right'>Harry</td><td valign='top'>Ron</td></tr><tr><td align='center'>Edward</td><td valign='bottom'>Jacob</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td align='right'&gt;Harry&lt;/td&gt;&lt;td valign='top'&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td align='center'&gt;Edward&lt;/td&gt;&lt;td valign='bottom'&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	  function border()
+	 {
+        document.getElementById("demo").innerHTML = " <center><table border=0><tr><td>Harry</td><td>Ron</td></tr><tr><td>Edward</td><td>Jacob</td></tr></table></center> "
+		document.getElementById("c").innerHTML = " <code>&lt;table border=0&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Edward&lt;/td&gt;&lt;td&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	 function col()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td bgcolor='pink'>Harry</td><td>Ron</td></tr><tr><td>Edward</td><td bgcolor='orange'>Jacob</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td bgcolor='pink'&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Edward&lt;/td&gt;&lt;td bgcolor='orange'&gt;Jacob&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+      function row()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td>Harry</td><td rowspan=2>Ron</td></tr><tr><td>Edward</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Harry&lt;/td&gt;&lt;td rowspan=2&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Edward&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+	 function cols()
+	 {
+        document.getElementById("demo").innerHTML = " <table border=1 width='60%' height='40%'><tr><td>Harry</td><td>Ron</td></tr><tr><td colspan=2>Edward</td></tr></table> "
+		document.getElementById("c").innerHTML = " <code>&lt;table width='60%' height='40%'&gt;<br>&nbsp;&lt;tr&gt;&lt;td&gt;Harry&lt;/td&gt;&lt;td&gt;Ron&lt;/td&gt;&lt;tr&gt;<br>&nbsp;&lt;tr&gt;&lt;td colspan=2&gt;Edward&lt;/td&gt;&lt;tr&gt;<br>&lt;/table&gt;</code>"
+     }
+  </script>
+</head>
+<body>
+
+<div class="left" style="background-color:#D4D4D4;width:45%;height:85%;float:left;">
+ <h3> HTML Elements:<br><br>
+     &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="table()">&nbsp;How to create Tables</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="att()">&nbsp;Width & Height Attributes</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="aln()">&nbsp;Align</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="valn()">&nbsp;Valign</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="border()">&nbsp;Table Borders</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="col()">&nbsp;colours</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="row()">&nbsp;Rowspan</input><br>
+	 &nbsp;&nbsp;
+     <input type="radio" name="t" onclick="cols()">&nbsp;Colspan</input><br>
+	
+  </h3>	 
+  </div>
+  <div class="right" style="background-color:#E5E5E5;width:45%;height:60%;float:right;">
+  Output:
+    <p id="demo"></p>
+   </div>
+<br><br><br><br>
+   <div id="code" style="background-color:#F2F2F2;width:45%;height:30%;float:right;">
+    Code:
+    <p id="c"></p>
+  </div>
+ 
+</body>
+
+</html>  
