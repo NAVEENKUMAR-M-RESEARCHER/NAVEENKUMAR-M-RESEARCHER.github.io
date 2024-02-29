@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Technology</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .yy {
+            cursor: pointer;
+            margin-bottom: 5px;
+            padding: 5px;
+            color: rgb(83, 33, 9);
+            border-radius: 10px;
+            box-shadow: 5px, 10px;
+        }
+
+        div {
+            border-radius: 10px;
+        }
+
+        .highlighted {
+            background-color: rgb(240, 240, 159);
+        }
+
+        #a {
+            background-color: #33ADAD;
+            width: 30%;
+            height: 550px; /* Adjust height according to content */
+            float: left;
+            overflow-y: auto; /* Add scroll bar */
+        }
+
+        #b {
+            background-color: rgb(209, 240, 219);
+            width: 68%;
+            height: 490%;
+            float: right;
+            margin-bottom: 5px;
+        }
+        h1{
+          color: white;
+          font-size:38;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-style: italic;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('li').click(function(event) {
+                event.stopPropagation(); // Stop event propagation to prevent interference with other click handlers
+                $('li').removeClass('highlighted'); // Remove the class from all other li elements
+                $(this).addClass('highlighted'); // Add the class to the clicked li element
+
+                var courseId = $(this).data('course-id');
+                var videoUrl = $(this).data('video-url');
+                var videoTitle = $(this).text();
+
+                var iframeHtml = `<h1>${videoTitle}</h1>` +
+                    `<iframe width="98%" height="470" src="${videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+
+                $('#b').html(iframeHtml);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align:center; background-color:#33ADAD;">
+        Web Technology <br> (HTML,CSS, JavaScript, PhP)
+    </h1>
+    <div id='a'> <br>
+        <b>Course Details: </b><br>
+        <h2>
+            <ol>
+                <li>HTML
+                    <ul>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/uKvHcjxckDU?si=aYcbuJeBSQCnGRml">Introduction</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/yZKeGvk8i-4?si=NRU7agTBQ6zhgIhD">Heading Tags</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/mZqTwD73Zn8?si=cRkTKsRoFEtel6r6">Formatting Tags</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/Ee3ERAPoAZY?si=3XQAztbRFCvo4zgW">Images on Webpage</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/yUGUvO3OZ_A?si=oK8N3GV9xN5N7V8D">Hyperlinks</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/ddGLMZR6aO4?si=9MWyHuPm3UaCQ6r-">Forms</li>
+                        <li class="yy" data-course-id="html" data-video-url="https://www.youtube.com/embed/70RWTnPrkv0?si=eushXWpZggjECJk2">Test Your HTML Skills</li>
+                    </ul>
+                    <BR>
+                </li>
+                <li>CSS
+                    <ul>
+                        <li class="yy" data-course-id="css" data-video-url="https://www.youtube.com/embed/n6b4LmnennY?si=-6L1UpBkwZQbHz3V">Box Model</li>
+                    </ul>
+                    <BR>
+                </li>
+                <li>JAVASCRIPT
+                    <ul>
+                        <li class="yy" data-course-id="javascript" data-video-url="https://www.youtube.com/embed/VN273vY-j9w?si=AxW8KIi7D_jymX2h">Variables</li>
+                        <li class="yy" data-course-id="javascript" data-video-url="https://www.youtube.com/embed/o7BUw2hzGeI?si=pK7R47tbLnS7NRWp">Datatypes</li>
+                        <li class="yy" data-course-id="javascript" data-video-url="https://www.youtube.com/embed/MJrBAgQ_7bs?si=xRi7kiD3NqAdH_ai">Arrays</li>
+                        <li class="yy" data-course-id="javascript" data-video-url="https://www.youtube.com/embed/WZTAWRO1mhA?si=o5Qy8XjGCiKXw0oS" >Classes</li>
+                    </ul>
+                </li>
+            </ol>
+        </h2>
+    </div>
+    <div id='b'>
+    </div>
+</body>
+</html>
 
