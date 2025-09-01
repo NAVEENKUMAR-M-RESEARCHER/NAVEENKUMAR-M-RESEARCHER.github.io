@@ -1,137 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Portfolio</title>
-	<!-- css files -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Naveen Kumar | SRM AP University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --card:#0b1225;         /* slightly lighter for cards */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e2e8f0;         /* slate-200 */
+      --accent:#4f46e5;       /* indigo-600 */
+      --accent-2:#06b6d4;     /* cyan-500 */
+      --ring: rgba(79,70,229,.35);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; background:radial-gradient(1200px 600px at 100% -10%, rgba(6,182,212,.12), transparent 50%), radial-gradient(900px 400px at -10% 10%, rgba(79,70,229,.15), transparent 55%), var(--bg); color:var(--text)}
 
-	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-	<meta name="author" content="Hassan Ali">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* Header */
+    .header{position:relative; padding:56px 20px 36px; background:linear-gradient(180deg, rgba(15,23,42,.65), rgba(15,23,42,.2)); border-bottom:1px solid rgba(148,163,184,.15)}
+    .container{max-width:1100px; margin:0 auto}
+    .hero{display:flex; gap:22px; align-items:center; flex-wrap:wrap}
+    .avatar{width:92px; height:92px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.7); box-shadow:var(--shadow)}
+    .title{font-size:clamp(26px,2.5vw,34px); font-weight:700; margin:0}
+    .subtitle{margin:6px 0 0; color:var(--muted)}
+    .btns{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; background:var(--accent); color:#fff; padding:10px 14px; border-radius:12px; text-decoration:none; box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent; border:1px solid rgba(148,163,184,.35); color:var(--text)}
+
+    /* Nav */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(2,6,23,.6); border-bottom:1px solid rgba(148,163,184,.15)}
+    .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:10px 20px; justify-content:center; flex-wrap:wrap}
+    .nav a{color:var(--text); text-decoration:none; padding:8px 12px; border-radius:10px}
+    .nav a:hover, .nav a:focus{outline:none; box-shadow:0 0 0 3px var(--ring)}
+
+    /* Sections */
+    section{padding:54px 20px}
+    section .section-title{font-size:22px; font-weight:700; margin:0 0 16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(148,163,184,.16); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .grid{display:grid; gap:16px}
+    @media(min-width:800px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+
+    /* Lists */
+    ol.publist{counter-reset: item; padding-left:1rem}
+    ol.publist li{position:relative; list-style:none; padding:14px 14px 14px 46px; border:1px solid rgba(148,163,184,.16); border-radius:14px; margin-bottom:12px; background:rgba(2,6,23,.35)}
+    ol.publist li::before{counter-increment:item; content:counter(item) "."; position:absolute; left:12px; top:14px; color:var(--accent-2); font-weight:700}
+    li .meta{color:var(--muted); font-size:.95rem}
+
+    ul.clean{padding-left:1rem}
+    ul.clean li{padding:10px 12px; border:1px solid rgba(148,163,184,.16); border-radius:12px; margin:8px 0; background:rgba(2,6,23,.35)}
+
+    /* Tools cards */
+    .tool{padding:18px}
+    .tool h4{margin:0 0 6px}
+    .tool p{margin:0; color:var(--muted)}
+    .tool a{display:inline-block; margin-top:10px; color:#fff; text-decoration:none; background:var(--accent); padding:8px 12px; border-radius:10px}
+
+    /* Footer */
+    footer{padding:26px 20px; color:var(--muted); border-top:1px solid rgba(148,163,184,.15)}
+
+    /* Controls */
+    .controls{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0}
+    .input{background:rgba(2,6,23,.5); color:var(--text); border:1px solid rgba(148,163,184,.2); padding:10px 12px; border-radius:12px; min-width:220px}
+    .chip{display:inline-flex; align-items:center; gap:.5rem; padding:6px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.25); color:var(--muted)}
+
+    /* Back to top */
+    #toTop{position:fixed; right:18px; bottom:18px; background:var(--accent); color:#fff; border:none; border-radius:12px; padding:10px 12px; cursor:pointer; display:none; box-shadow:var(--shadow)}
+  </style>
 </head>
-	<body>
-		<!-- Navbar -->
-		<nav class="nav container void-background">
-			<!-- This "nav-menu" is hidden on mobile -->
-			<!-- Add the modifier "is-active" to display it on mobile -->
-			<div class="nav-left">
-				<a href="" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-medium"></i>
-					</span>
-				</a>
-				<a href="https://github.com/NAVEENKUMAR-M-RESEARCHER/" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-github"></i>
-					</span>
-				</a>
-				<a href="" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-twitter"></i>
-					</span>
-				</a>				
-			</div>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="container hero">
+      <img src="./assets/img/profile.jpg" alt="Dr. Naveen Kumar" class="avatar" />
+      <div>
+        <h1 class="title">Dr. Naveen Kumar</h1>
+        <p class="subtitle">Assistant Professor, Department of CSE • SRM AP University</p>
+        <div class="btns">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn secondary" href="CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-			<div class="nav-right nav-menu">
-				<a class="nav-item" href="./index.html">Home</a>
-				<a class="nav-item" href="#about">About</a>
-				<a class="nav-item" href="#projects">Projects</a>
-				<a class="nav-item" href="./htmltool/main.html" target="_blank">HTML Tool</a>
-			</div>
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <ul class="container">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#students">Students</a></li>
+      <li><a href="#btech">B.Tech Projects</a></li>
+      <li><a href="#tools">Learning Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-			<span class="nav-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-		</nav>
-				
-		<!-- About Me -->
-		<section id="about" class="section section-1">
-			<div class="container has-text-centered">
-				<!-- Source: https://flic.kr/p/pAZBNK -->
-				<img class="avatar" src="assets/img/profile.jpg">
-			</div>
-			<div class="container"></br>
-				<p class="intro">
-					Dr Naveenkumar Mahamkali holds the esteemed position of Assistant Professor at SRM University,Andhra Pradesh, where his rich academic journey and expertise shine through. He earned his Doctorate from the renowned </b>National Institute of Technology, Tiruchirappalli</b>, located in the culturally vibrant state of Tamil Nadu, India. Specializing in cutting-edge areas such as Computer Vision, Image Processing, and Machine Learning/Deep Learning applications, Dr. Naveenkumar is at the forefront of research and innovation. His dedication to advancing these fields is evident in the numerous articles he has published in reputable journals and presented at esteemed conferences.
-				</p>
-			</div>
-		</section>
-		
-		<!-- Projects -->
-		<section  id="projects" class="section section-2">
-			<div class="container">
-				<div class="has-text-centered">
-					<h3 class="title is-3">Projects</h3>
-				</div>
-				
-				<div class="columns is-multiline is-desktop">
-					<!-- Project 1 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-1.jpg" alt="Image">
-									</figure>
-								</div>
-								<div>			
-									<p>
-										They don’t want us to eat. I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 2 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<img src="assets/img/project-2.jpg" alt="Image">
-									</figure>
-								</div>
-								<div>			
-									<p>
-										Bless up. Another one. How’s business? Boomin. Don’t ever play yourself. Life is what you make it, so let’s make it.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="card" style="padding:20px;">
+      <p>
+        I am an Assistant Professor in the Department of Computer Science and Engineering at SRM AP University.
+        My research interests include Deep Learning, Computer Vision, Medical Image Analysis, and AI-driven healthcare systems.
+        I actively supervise PhD, M.Tech, and B.Tech students and enjoy building hands-on tools for learning.
+      </p>
+      <div class="chips" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap">
+        <span class="chip">Deep Learning</span>
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Medical Imaging</span>
+        <span class="chip">Autonomous Systems in Healthcare</span>
+      </div>
+    </div>
+  </section>
 
-		<!-- Social -->
-		<section id="social" class="section section-3">
-			<div class="container">
-				<div class="has-text-centered">					
-					<h3 class="title is-3">Let's Socialize</h3>
-				</div>
-				<div class="social-container columns">
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://www.linkedin.com/in/naveenkumar-m-researcher/"><img class="" src="assets/img/linkedin.png"></a>
-					</div>
-					<div class="column is-6 has-text-centered">
-						<a target="_blank" href="https://www.facebook.com/profile.php?id=100000746840343&mibextid=ZbWKwL"><img class="" src="assets/img/facebook.png"></a>
-					</div>
-				</div>
-			</div>
-		</section>	
-		
-		<!-- Footer -->
-		<section class="section-4 has-text-centered container">
-			<a href="">Dr M NaveenKumar</a>, <a href="https://www.youtube.com/@naveenideas928">Follow my YouTube Channel </a>
-		</section>
-		
-		<!-- Scripts  -->
-		<script src="controller.js"></script>		
-	</body>	
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications" class="container">
+    <h2 class="section-title">Publications</h2>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input class="input" id="pubSearch" type="search" placeholder="Search title / venue / year" />
+      <select class="input" id="pubYear"></select>
+      <button class="btn secondary" id="resetFilters" type="button">Reset</button>
+    </div>
+
+    <ol id="pubList" class="publist"></ol>
+
+    <!-- Edit-friendly note: Update the DATA.publications array in the script below. -->
+  </section>
+
+  <!-- ===================== STUDENTS ===================== -->
+  <section id="students" class="container">
+    <h2 class="section-title">Students</h2>
+    <div class="grid cols-2">
+      <div class="card" style="padding:20px">
+        <h3 style="margin-top:0">PhD Students</h3>
+        <ul id="phdList" class="clean"></ul>
+      </div>
+      <div class="card" style="padding:20px">
+        <h3 style="margin-top:0">M.Tech Students</h3>
+        <ul id="mtechList" class="clean"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== B.TECH PROJECTS ===================== -->
+  <section id="btech" class="container">
+    <h2 class="section-title">B.Tech Projects</h2>
+    <ul id="btechList" class="clean"></ul>
+    <!-- Edit as a simple list in DATA.btechProjects below. -->
+  </section>
+
+  <!-- ===================== LEARNING TOOLS ===================== -->
+  <section id="tools" class="container">
+    <h2 class="section-title">Learning Tools & Project Pages</h2>
+    <div class="grid cols-2">
+      <div class="card tool">
+        <h4>Fourier Transform Visualizer</h4>
+        <p>Interactive demo to build intuition for FT, spectra, and filtering.</p>
+        <a href="tools/fourier-visualizer.html">Open</a>
+      </div>
+      <div class="card tool">
+        <h4>Digital Image Processing Lab</h4>
+        <p>Small utilities for histogram equalization, edge detection, etc.</p>
+        <a href="tools/image-processing-lab.html">Open</a>
+      </div>
+      <div class="card tool">
+        <h4>ML Demos</h4>
+        <p>Mini apps for regression, classification, bias/variance intuition.</p>
+        <a href="tools/ml-demos.html">Open</a>
+      </div>
+      <div class="card tool">
+        <h4>navML (Coming Soon)</h4>
+        <p>Docs & examples for your Python package.</p>
+        <a href="#">Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card" style="padding:20px">
+      <p>Email: <a href="mailto:naveen@srmist.edu.in">naveen@srmist.edu.in</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/">linkedin.com/in/your-handle</a></p>
+      <p>Office: SRM AP University, Amaravati, Andhra Pradesh, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Dr. Naveen Kumar • SRM AP University</div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑ Top</button>
+
+  <script>
+    // ====== EDIT HERE: Simple data objects for easy updates ======
+    const DATA = {
+      publications: [
+        {
+          title: "Meta-Learning-Driven Stacked Ensemble of ResNet and VGG for Cotton Leaf Disease Classification",
+          authors: "Naveen Kumar, et al.",
+          venue: "(Manuscript)",
+          year: 2025,
+          link: "#"
+        },
+        { title: "Plant Leaf Disease Classification using CNNs and Transfer Learning", authors: "Naveen Kumar, et al.", venue: "Conference", year: 2023, link: "#" },
+        { title: "Texture Features for Medical Imaging", authors: "Scholar & N. Kumar", venue: "Journal", year: 2024, link: "#" },
+        { title: "NSL-KDD Intrusion Detection Experiments", authors: "N. Kumar", venue: "Workshop", year: 2022, link: "#" }
+      ],
+      phd: [
+        { name: "Scholar 1", topic: "Texture features for medical imaging" },
+        { name: "Scholar 2", topic: "AI-driven autonomous systems in healthcare" }
+      ],
+      mtech: [
+        { name: "Student A", topic: "MRI Enhancement: SSIM/PSNR-based evaluation" },
+        { name: "Student B", topic: "Raspberry Pi smart camera pipeline" }
+      ],
+      btechProjects: [
+        "Fall detection with skeleton joints from RGB video",
+        "Smart camera using Raspberry Pi Camera Module",
+        "Automated attendance with PTZ multi-angle framing"
+      ]
+    };
+
+    // ====== Helpers ======
+    const byId = (id) => document.getElementById(id);
+
+    // Render year in footer
+    byId('year').textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = byId('toTop');
+    window.addEventListener('scroll', () => { toTop.style.display = window.scrollY > 600 ? 'block' : 'none'; });
+    toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    // ====== Render Publications ======
+    const pubList = byId('pubList');
+    const pubYear = byId('pubYear');
+    const pubSearch = byId('pubSearch');
+    const resetBtn = byId('resetFilters');
+
+    const years = Array.from(new Set(DATA.publications.map(p => p.year))).sort((a,b)=>b-a);
+    pubYear.innerHTML = ['<option value="">All years</option>', ...years.map(y => `<option value="${y}">${y}</option>`)].join('');
+
+    function renderPublications(){
+      const q = pubSearch.value.trim().toLowerCase();
+      const y = pubYear.value;
+      const items = DATA.publications
+        .filter(p => !y || String(p.year)===y)
+        .filter(p => !q || `${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase().includes(q))
+        .sort((a,b)=> b.year - a.year);
+
+      pubList.innerHTML = items.map(p => `
+        <li>
+          <div style="font-weight:600">${p.title}</div>
+          <div class="meta">${p.authors} • ${p.venue} • ${p.year} ${p.link ? `• <a href='${p.link}' target='_blank' rel='noopener'>link</a>`:''}</div>
+        </li>`).join('');
+    }
+
+    pubSearch.addEventListener('input', renderPublications);
+    pubYear.addEventListener('change', renderPublications);
+    resetBtn.addEventListener('click', ()=>{ pubSearch.value=''; pubYear.value=''; renderPublications(); });
+    renderPublications();
+
+    // ====== Render Students ======
+    function renderList(el, arr){ el.innerHTML = arr.map(x => typeof x === 'string' ? `<li>${x}</li>` : `<li><strong>${x.name}</strong> — ${x.topic}</li>`).join(''); }
+    renderList(byId('phdList'), DATA.phd);
+    renderList(byId('mtechList'), DATA.mtech);
+    renderList(byId('btechList'), DATA.btechProjects);
+  </script>
+</body>
 </html>
