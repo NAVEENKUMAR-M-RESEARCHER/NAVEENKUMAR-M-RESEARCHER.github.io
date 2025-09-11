@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Naveen Kumar Mahamkali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --card:#0b1225;         /* slightly lighter for cards */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e2e8f0;         /* slate-200 */
+      --accent:#4f46e5;       /* indigo-600 */
+      --accent-2:#06b6d4;     /* cyan-500 */
+      --ring: rgba(79,70,229,.35);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; background:radial-gradient(1200px 600px at 100% -10%, rgba(6,182,212,.12), transparent 50%), radial-gradient(900px 400px at -10% 10%, rgba(79,70,229,.15), transparent 55%), var(--bg); color:var(--text)}
+
+    /* Header */
+    .header{position:relative; padding:56px 20px 36px; background:linear-gradient(180deg, rgba(15,23,42,.65), rgba(15,23,42,.2)); border-bottom:1px solid rgba(148,163,184,.15)}
+    .container{max-width:1100px; margin:0 auto}
+    .hero{display:flex; gap:22px; align-items:center; flex-wrap:wrap}
+    .avatar{width:92px; height:92px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.7); box-shadow:var(--shadow)}
+    .title{font-size:clamp(26px,2.5vw,34px); font-weight:700; margin:0}
+    .subtitle{margin:6px 0 0; color:var(--muted)}
+    .btns{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; background:var(--accent); color:#fff; padding:10px 14px; border-radius:12px; text-decoration:none; box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent; border:1px solid rgba(148,163,184,.35); color:var(--text)}
+
+    /* Nav */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(2,6,23,.6); border-bottom:1px solid rgba(148,163,184,.15)}
+    .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:10px 20px; justify-content:center; flex-wrap:wrap}
+    .nav a{color:var(--text); text-decoration:none; padding:8px 12px; border-radius:10px}
+    .nav a:hover, .nav a:focus{outline:none; box-shadow:0 0 0 3px var(--ring)}
+
+    /* Sections */
+    section{padding:54px 20px}
+    section .section-title{font-size:22px; font-weight:700; margin:0 0 16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(148,163,184,.16); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .grid{display:grid; gap:16px}
+    @media(min-width:800px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+
+    /* Lists */
+    ol.publist{counter-reset: item; padding-left:1rem}
+    ol.publist li{position:relative; list-style:none; padding:14px 14px 14px 46px; border:1px solid rgba(148,163,184,.16); border-radius:14px; margin-bottom:12px; background:rgba(2,6,23,.35)}
+    ol.publist li::before{counter-increment:item; content:counter(item) "."; position:absolute; left:12px; top:14px; color:var(--accent-2); font-weight:700}
+    li .meta{color:var(--muted); font-size:.95rem}
+
+    ul.clean{padding-left:1rem}
+    ul.clean li{padding:10px 12px; border:1px solid rgba(148,163,184,.16); border-radius:12px; margin:8px 0; background:rgba(2,6,23,.35)}
+
+    /* Tools cards */
+    .tool{padding:18px}
+    .tool h4{margin:0 0 6px}
+    .tool p{margin:0; color:var(--muted)}
+    .tool a{display:inline-block; margin-top:10px; color:#fff; text-decoration:none; background:var(--accent); padding:8px 12px; border-radius:10px}
+
+    /* Footer */
+    footer{padding:26px 20px; color:var(--muted); border-top:1px solid rgba(148,163,184,.15)}
+
+    /* Controls */
+    .controls{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0}
+    .input{background:rgba(2,6,23,.5); color:var(--text); border:1px solid rgba(148,163,184,.2); padding:10px 12px; border-radius:12px; min-width:220px}
+    .chip{display:inline-flex; align-items:center; gap:.5rem; padding:6px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.25); color:var(--muted)}
+
+    /* Back to top */
+    #toTop{position:fixed; right:18px; bottom:18px; background:var(--accent); color:#fff; border:none; border-radius:12px; padding:10px 12px; cursor:pointer; display:none; box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <ul class="container">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#students">Students</a></li>
+      <li><a href="#btech">B.Tech Projects</a></li>
+      <li><a href="#tools">Learning Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications" class="container">
+    <h2 class="section-title">Publications</h2>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input class="input" id="pubSearch" type="search" placeholder="Search title / venue / year" />
+      <select class="input" id="pubYear"></select>
+      <button class="btn secondary" id="resetFilters" type="button">Reset</button>
+    </div>
+
+    <ol id="pubList" class="publist"></ol>
+
+    <!-- Edit-friendly note: Update the DATA.publications array in the script below. -->
+  </section>
+
+  <section id="conferences" class="container">
+    <h2 class="section-title">Conferences</h2>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input class="input" id="confSearch" type="search" placeholder="Search title / venue / year" />
+      <select class="input" id="confYear"></select>
+      <button class="btn secondary" id="resetFilters2" type="button">Reset</button>
+    </div>
+
+    <ol id="confList" class="publist"></ol>
+
+    <!-- Edit-friendly note: Update the DATA.publications array in the script below. -->
+  </section>
+
+  
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card" style="padding:20px">
+      <p>Email: <a href="mailto:naveenkumar.m@srmap.edu.in">naveenkumar.m@srmap.edu.in</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/naveenkumar-m-researcher/">linkedin.com/in/your-handle</a></p>
+      <p>Office: SRM AP University, Amaravati, Andhra Pradesh, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Dr. Naveen Kumar Mahamkali</div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑ Top</button>
+
+  <script>
+    // ====== EDIT HERE: Simple data objects for easy updates ======
+    const DATA = {
+      publications: [
+  {
+    title: "Intrusion Detection System Using Pipelining Approach",
+    authors: "M. Naveen Kumar, G. Rajeswarappa",
+    venue: "International Journal of Engineering Science Invention",
+    year: 2013,
+    link: "#"
+  },
+  {
+    title: "Ensemble Spatio-Temporal Distance Net for Skeleton Based Action Recognition",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "Scalable Computing: Practice and Experience",
+    year: 2019,
+    link: "#"
+  },
+  {
+    title: "Deep ensemble network using distance maps and body part features for skeleton based action recognition",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "Pattern Recognition, Pergamon",
+    year: 2020,
+    link: "#"
+  },
+  {
+    title: "Learning representations from quadrilateral geometric features with LSTMs",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "Intelligent Decision Technologies, IOS Press",
+    year: 2020,
+    link: "#"
+  },
+  {
+    title: "Learning Representations from Spatio-Temporal Distance Maps",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "ADCAIJ Journal",
+    year: 2019,
+    link: "#"
+  },
+  {
+    title: "Spatio temporal joint distance maps for skeleton-based action recognition",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "International Journal of Image and Graphics, World Scientific",
+    year: 2021,
+    link: "#"
+  },
+  {
+    title: "Synergistic integration of skeletal kinematic features for vision-based fall detection",
+    authors: "Anitha Rani Inturi, V.M. Manikandan, M. Naveenkumar, Shuihua Wang, Yudong Zhang",
+    venue: "Sensors, MDPI",
+    year: 2023,
+    link: "#"
+  }
+],
+
+conferences: [
+  {
+    title: "OpenCV for Computer Vision Applications",
+    authors: "M. Naveenkumar, A. Vadivel",
+    venue: "NCBDC’15, NIT Trichy",
+    year: 2015,
+    link: "#"
+  },
+  {
+    title: "3-D projected PCA based DMM feature fusing with SMO-SVM for human action recognition",
+    authors: "M. Naveenkumar, A. Vadivel",
+    venue: "Procedia Computer Science, Elsevier",
+    year: 2016,
+    link: "#"
+  },
+  {
+    title: "Moving object detection and tracking based on the contour extraction and centroid representation",
+    authors: "M. Naveenkumar, K.V. Sriharsha, A. Vadivel",
+    venue: "Encyclopedia of Information Science and Technology, IGI Global",
+    year: 2018,
+    link: "#"
+  },
+  {
+    title: "Vector Quantization based Pairwise Joint Distance Maps (VQ-PJDM) for 3D Action Recognition",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "Procedia Computer Science",
+    year: 2018,
+    link: "#"
+  },
+  {
+    title: "Skeleton Joint Difference Maps for 3D Action Recognition with CNNs",
+    authors: "M. Naveenkumar, S. Domnic",
+    venue: "ICRTIPPR, Springer",
+    year: 2019,
+    link: "#"
+  },
+    {
+    title: "A Comparative Study of 2D and 3D CNNs for Melanoma Classification",
+    authors: "Thireesha Suryadevara, Mudassir Rafi, M. Naveenkumar, Rushitha Nalamothu",
+    venue: "ICEC, IEEE",
+    year: 2024,
+    link: "#"
+  },
+  {
+    title: "Comparative Study of ML Techniques for Classification of Crop Pests",
+    authors: "Jaanaki Swaroop Pamidimukkala, Divya Sri Kosaraju, M. Naveenkumar, et al.",
+    venue: "AISP, IEEE",
+    year: 2024,
+    link: "#"
+  }
+]
+
+};
+
+
+ // ====== Helpers ======
+    const byId = (id) => document.getElementById(id);
+
+    // Render year in footer
+    byId('year').textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = byId('toTop');
+    window.addEventListener('scroll', () => { toTop.style.display = window.scrollY > 600 ? 'block' : 'none'; });
+    toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+    // ====== Render Publications ======
+    const pubList = byId('pubList');
+    const pubYear = byId('pubYear');
+    const pubSearch = byId('pubSearch');
+    const resetBtn = byId('resetFilters');
+
+    const years = Array.from(new Set(DATA.publications.map(p => p.year))).sort((a,b)=>b-a);
+    pubYear.innerHTML = ['<option value="">All years</option>', ...years.map(y => `<option value="${y}">${y}</option>`)].join('');
+
+    //---------Render Conferences =========
+    const confList = byId('confList');
+    const confYear = byId('confYear');
+    const confSearch = byId('confSearch');
+    const resetBtn2 = byId('resetFilters2');
+
+    const years2 = Array.from(new Set(DATA.conferences.map(p => p.year))).sort((a,b)=>b-a);
+    confYear.innerHTML = ['<option value="">All years</option>', ...years.map(y => `<option value="${y}">${y}</option>`)].join('');
+
+    
+    
+    function renderPublications(){
+      const q = pubSearch.value.trim().toLowerCase();
+      const y = pubYear.value;
+      const items = DATA.publications
+        .filter(p => !y || String(p.year)===y)
+        .filter(p => !q || `${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase().includes(q))
+        .sort((a,b)=> b.year - a.year);
+
+      pubList.innerHTML = items.map(p => `
+        <li>
+          <div style="font-weight:600">${p.title}</div>
+          <div class="meta">${p.authors} • ${p.venue} • ${p.year} ${p.link ? `• <a href='${p.link}' target='_blank' rel='noopener'>link</a>`:''}</div>
+        </li>`).join('');
+    }
+
+    function renderConferences(){
+      const q = confSearch.value.trim().toLowerCase();
+      const y = confYear.value;
+      const items2 = DATA.conferences
+        .filter(p => !y || String(p.year)===y)
+        .filter(p => !q || `${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase().includes(q))
+        .sort((a,b)=> b.year - a.year);
+
+      confList.innerHTML = items2.map(p => `
+        <li>
+          <div style="font-weight:600">${p.title}</div>
+          <div class="meta">${p.authors} • ${p.venue} • ${p.year} ${p.link ? `• <a href='${p.link}' target='_blank' rel='noopener'>link</a>`:''}</div>
+        </li>`).join('');
+    }
+
+    pubSearch.addEventListener('input', renderPublications);
+    pubYear.addEventListener('change', renderPublications);
+    resetBtn.addEventListener('click', ()=>{ pubSearch.value=''; pubYear.value=''; renderPublications(); });
+    renderPublications();
+
+    confSearch.addEventListener('input', renderConferences);
+    confYear.addEventListener('change', renderConferences);
+    resetBtn2.addEventListener('click', ()=>{ confSearch.value=''; confYear.value=''; renderConferences(); });
+    renderConferences();
+  </script>
+
+</body>
+</html>
