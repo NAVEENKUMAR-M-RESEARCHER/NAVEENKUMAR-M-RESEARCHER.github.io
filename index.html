@@ -142,7 +142,7 @@
 
     /* Sections */
     section {
-      padding: 54px 20px
+      padding: 20px 20px
     }
 
     section .section-title {
@@ -156,6 +156,14 @@
       border: 1px solid rgba(148, 163, 184, .16);
       border-radius: var(--radius);
       box-shadow: var(--shadow)
+    }
+
+    .card2 {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(148, 163, 184, .16);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 20px;
     }
 
     .grid {
@@ -291,9 +299,9 @@
   <!-- ===================== HEADER ===================== -->
   <header class="header">
     <div class="container hero">
-      <img src="profile.jpg" alt="Dr. Naveen Kumar" class="avatar" />
+      <img src="./assets/img/naveen.jpg" alt="Dr. Naveen Kumar Mahamkali" class="avatar" />
       <div>
-        <h1 class="title">Dr. Naveen Kumar</h1>
+        <h1 class="title">Dr.Mahmkali Naveen Kumar </h1>
         <p class="subtitle">Assistant Professor, Department of CSE • SRM AP University</p>
         <div class="btns">
           <a class="btn" href="#contact">Contact</a>
@@ -319,12 +327,29 @@
   <section id="about" class="container">
     <h2 class="section-title">About Me</h2>
     <div class="card" style="padding:20px;">
-      <p>
-        I am an Assistant Professor in the Department of Computer Science and Engineering at SRM AP University.
-        My research interests include Deep Learning, Computer Vision, Medical Image Analysis, and AI-driven healthcare
-        systems.
-        I actively supervise PhD, M.Tech, and B.Tech students and enjoy building hands-on tools for learning.
-      </p>
+
+<p style="color:#e0e6f1; font-family:Segoe UI, sans-serif; font-size:16px; line-height:1.8; text-align:justify;">
+  <strong style="color:#ffd369;">Dr. NaveenKumar Mahamkali</strong> is an accomplished academic and researcher, currently serving as an 
+  <strong style="color:#ffd369;">Assistant Professor in the Department of Computer Science and Engineering at SRM University-AP, India</strong>. 
+  He earned his <strong style="color:#ffd369;">Ph.D. from the National Institute of Technology, Tiruchirappalli</strong>, where his research focused on 
+  <em style="color:#9fd3c7;">human action recognition using skeleton data</em>—an area with profound applications in healthcare, surveillance, and 
+  human-computer interaction. With <strong style="color:#ffd369;">over a decade of academic and research experience</strong>, Dr. Mahamkali has cultivated expertise in 
+  <span style="color:#4db8ff; font-weight:600;">deep learning</span>, 
+  <span style="color:#4db8ff; font-weight:600;">medical image analysis</span>, 
+  <span style="color:#4db8ff; font-weight:600;">microarray and RNA-Seq data classification</span>, 
+  and <span style="color:#4db8ff; font-weight:600;">computer vision</span>. 
+  His Ph.D. journey ignited a passion for developing intelligent systems that interpret human activity, 
+  and this passion now extends to advancing <strong style="color:#ffd369;">AI-driven solutions in medical imaging and life sciences</strong>.
+</p>
+
+<p style="color:#e0e6f1; font-family:Segoe UI, sans-serif; font-size:16px; line-height:1.8; text-align:justify;">
+  He has authored and co-authored several papers in reputed international journals and conferences, 
+  contributing to the growing body of knowledge in AI for healthcare. As an educator, Dr. Mahamkali is deeply committed to 
+  <strong style="color:#ffd369;">mentoring students and young researchers</strong>, inspiring them to innovate fearlessly and solve global challenges 
+  through technology. His long-term vision is to <strong style="color:#ffd369;">blend artificial intelligence with healthcare innovation</strong>, 
+  making diagnostic and predictive systems smarter, faster, and more accessible — thereby impacting lives worldwide.
+</p>
+
       <div class="chips" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap">
         <span class="chip">Deep Learning</span>
         <span class="chip">Computer Vision</span>
@@ -333,21 +358,22 @@
       </div>
     </div>
   </section>
-
-  <!-- ===================== PUBLICATIONS ===================== -->
- <section>
-   <h2> Publications</h2>
-        Visit this link for my publications: <a href="./publications.html">Link</a>
- </section>
+ <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications" class="container">
+    <h2 class="section-title" style="padding:20px;">Publications</h2>
+    <div class="card2" style="padding:20px;">
+      Visit this link for my publications: <a href="./publications.html">Link</a>
+    </div>
 
   <!-- ===================== STUDENTS ===================== -->
   <section id="students" class="container">
     <h2 class="section-title">Students</h2>
-    <div class="grid cols-2">
+    <div class=""> <!-- class="grid cols-2"-->
       <div class="card" style="padding:20px">
         <h3 style="margin-top:0">PhD Students</h3>
         <ul id="phdList" class="clean"></ul>
-      </div>
+      </div> <br>
+     
       <div class="card" style="padding:20px">
         <h3 style="margin-top:0">M.Tech Students</h3>
         <ul id="mtechList" class="clean"></ul>
@@ -366,18 +392,20 @@
   <section id="tools" class="container">
     <h2 class="section-title">Learning Tools & Project Pages</h2>
     <div class="grid cols-2">
+    
+    <div class="card tool">
+    <h4>Web Technology Simulation Tool</h4>
+    <p>A basic interactive tool designed to help learners explore and understand the fundamentals of HTML and CSS. This tool allows users to experiment with web elements, practice coding in real-time, and visualize how HTML structure and CSS styling work together to create web pages. Ideal for beginners, students, and anyone looking to strengthen their foundational web development skills.</p>
+    <a href="./htmltool/main.html" target="_blank">Open</a>
+    </div>
+    <div class="card tool">
+          <h4>Web Technology Video Course</h4>
+          <p>A structured video learning platform to understand the fundamentals of HTML, CSS, and JavaScript. This site provides step-by-step lectures, demonstrations, and examples, making it easier for learners to build a strong foundation in web development at their own pace.</p>
+          <a href="./webtech/index.html" target="_blank">Open</a>
+    </div>
+
       <div class="card tool">
-        <h4>Fourier Transform Visualizer</h4>
-        <p>Interactive demo to build intuition for FT, spectra, and filtering.</p>
-        <a href="tools/fourier-visualizer.html">Open</a>
-      </div>
-      <div class="card tool">
-        <h4>Digital Image Processing Lab</h4>
-        <p>Small utilities for histogram equalization, edge detection, etc.</p>
-        <a href="tools/image-processing-lab.html">Open</a>
-      </div>
-      <div class="card tool">
-        <h4>ML Demos</h4>
+        <h4>ML Demos (Coming Soon) </h4>
         <p>Mini apps for regression, classification, bias/variance intuition.</p>
         <a href="tools/ml-demos.html">Open</a>
       </div>
@@ -393,9 +421,9 @@
   <section id="contact" class="container">
     <h2 class="section-title">Contact</h2>
     <div class="card" style="padding:20px">
-      <p>Email: <a href="mailto:naveen@srmist.edu.in">naveen@srmist.edu.in</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/">linkedin.com/in/your-handle</a></p>
-      <p>Office: SRM AP University, Amaravati, Andhra Pradesh, India</p>
+      <p>Email: <a href="mailto:naveenkumar.m@srmap.edu.in">naveenkumar.m@srmap.edu.in</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/naveenkumar-m-researcher/">linkedin.com</a></p>
+      <p>Office: SRM University-AP, Andhra Pradesh, India</p>
     </div>
   </section>
 
@@ -417,8 +445,8 @@
         { name: "1. Ngem Olyvia Pongha (2023-24)", topic: "Deep Learning Approaches for COVID-19 Classification Handling Class Imbalance" }
       ],
       btechProjects: [
-        "Fall detection with skeleton joints from RGB video",
-        "Smart camera using Raspberry Pi Camera Module",
+        "Fall Detection with skeleton joints from RGB video",
+        "Smart Camera using Raspberry Pi Camera Module",
         "Automated attendance with PTZ multi-angle framing"
       ]
     };
